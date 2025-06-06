@@ -1,80 +1,195 @@
-body {
-  font-family: 'Inter', sans-serif;
-  background-image: url('arkaplan.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  color: #fff;
+/* ───────────────────────────────────────────────────────────────────────── */
+/*                          GENEL RESET VE BAZİLER                          */
+/*───────────────────────────────────────────────────────────────────────────*/
+
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  /* Açık pembe zemin / arka plan rengini ayarlıyoruz */
+  background-color: #ffdce1;
+  /* Alternatif: Eğer arkaplan görseli kullanmak istersen: */
+  /* background: url('arkaplan.jpg') center/cover no-repeat; */
+
+  /* Yazı ve font ayarları */
+  font-family: "Inter", sans-serif;
+  color: #222;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  transition: background-color 0.4s ease;
+  justify-content: space-between;
   text-align: center;
+  padding: 2rem 1rem;
+  position: relative;
 }
 
-h1 {
-  font-size: 2.5rem;
+/* Opsiyonel: Yarı saydam katman efekti (ikon üstüne daha fazla kontrast) */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 220, 225, 0.6); /* Açık pembe yarı saydam */
+  z-index: 0;
+}
+
+/*───────────────────────────────────────────────────────────────────────────*/
+/*                              HEADER BÖLÜMÜ                               */
+/*───────────────────────────────────────────────────────────────────────────*/
+
+header {
+  margin-top: 2rem;
+  z-index: 1;
+}
+
+header h1 {
+  font-family: "Poppins", sans-serif;
+  font-size: 3rem;
+  font-weight: 800;
   color: #ff3366;
-  margin: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 0.5rem;
+  z-index: 1;
+  line-height: 1.2;
+}
+
+header .subtitle {
+  font-size: 1.125rem;
+  font-family: "Inter", sans-serif;
+  color: #553946;
+  margin-bottom: 2rem;
+  z-index: 1;
+}
+
+/*───────────────────────────────────────────────────────────────────────────*/
+/*                               HERO BÖLÜMÜ                                */
+/*───────────────────────────────────────────────────────────────────────────*/
+
+.hero-icon {
+  z-index: 1;
+  margin-bottom: 2rem;
+}
+
+.hero-icon img {
+  width: 180px;
+  max-width: 60%;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
 }
 
-h1:hover {
+.hero-icon img:hover {
   transform: scale(1.05);
-  color: #ff5599;
 }
 
-main p {
-  font-size: 1.2rem;
-  max-width: 600px;
-  padding: 0 1rem;
-}
+/*───────────────────────────────────────────────────────────────────────────*/
+/*                              BUTONLAR VE KONTEYNER                       */
+/*───────────────────────────────────────────────────────────────────────────*/
 
-footer {
-  margin-top: 2rem;
-  font-size: 0.9rem;
-  color: #999;
-}
-
-/* Mobil uyumlu yazı boyutu ve spacing */
-@media (max-width: 600px) {
-  h1 {
-    font-size: 2rem;
-  }
-
-  main p {
-    font-size: 1rem;
-  }
-
-  footer {
-    font-size: 0.8rem;
-  }
-}
 .button-container {
-  margin-top: 2rem;
   display: flex;
-  gap: 1rem;
   flex-wrap: wrap;
   justify-content: center;
+  gap: 1rem;
+  z-index: 1;
 }
 
-button {
-  background-color: #ff3366;
-  color: white;
+.btn {
+  font-family: "Poppins", sans-serif;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 0.75rem 1.8rem;
   border: none;
-  padding: 0.8rem 1.6rem;
   border-radius: 8px;
   font-size: 1rem;
   cursor: pointer;
   transition: all 0.3s ease;
+  display: inline-block;
 }
 
-button:hover {
+/* Kırmızı tabanlı birinci buton (KAYIT OL, İNDİR) */
+.btn-primary {
+  background-color: #ff3366;
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.btn-primary:hover {
   background-color: #ff5599;
-  transform: scale(1.05);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Daha yumuşak ikinci buton (KAZAN) */
+.btn-secondary {
+  background-color: #fff;
+  color: #ff3366;
+  border: 2px solid #ff3366;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.btn-secondary:hover {
+  background-color: #ff3366;
+  color: #fff;
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+/*───────────────────────────────────────────────────────────────────────────*/
+/*                              FOOTER BÖLÜMÜ                               */
+/*───────────────────────────────────────────────────────────────────────────*/
+
+footer {
+  z-index: 1;
+  font-family: "Inter", sans-serif;
+  font-size: 0.75rem;
+  color: #555;
+  margin-top: 3rem;
+  padding: 1rem 0;
+}
+
+/*───────────────────────────────────────────────────────────────────────────*/
+/*                            MOBİL UYUMLU TARZ                              */
+/*───────────────────────────────────────────────────────────────────────────*/
+
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2.5rem;
+  }
+  header .subtitle {
+    font-size: 1rem;
+  }
+  .hero-icon img {
+    width: 140px;
+    max-width: 50%;
+  }
+  .btn {
+    font-size: 0.9rem;
+    padding: 0.6rem 1.4rem;
+  }
+}
+
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 2rem;
+  }
+  .hero-icon img {
+    width: 120px;
+    max-width: 60%;
+  }
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
 }

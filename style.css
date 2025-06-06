@@ -2,7 +2,6 @@
 /*                        GENEL RESET VE TEMEL AYARLAR                        */
 /*───────────────────────────────────────────────────────────────────────────*/
 
-/* Tarayıcı sıfırlama */
 * {
   margin: 0;
   padding: 0;
@@ -87,102 +86,71 @@ h1, h2, h3 {
 }
 
 /* ───────────────────────────────────────────────────────────────────────── */
-/*                           BÖLÜM ORTAK AYARLAR                             */
-/*───────────────────────────────────────────────────────────────────────────*/
-
-.section {
-  width: 100%;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-top: 60px;
-  position: relative;
-}
-
-.section h1 {
-  font-size: 3rem;
-  font-weight: 800;
-  margin-bottom: 0.5rem;
-}
-
-.section h2 {
-  font-size: 2.5rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
-}
-
-.section p {
-  font-size: 1rem;
-  color: #3c3c3c;
-  margin-bottom: 1.5rem;
-  max-width: 600px;
-  text-align: center;
-}
-
-/* ───────────────────────────────────────────────────────────────────────── */
-/*                         HERO (Video Arka Plan)                            */
+/*                        HERO (Tam Ekran Video)                             */
 /*───────────────────────────────────────────────────────────────────────────*/
 
 .hero {
-  background-color: #f7f7f7;
+  position: relative;
+  width: 100vw;
+  min-height: 100vh;
+  overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
 }
 
-.hero-inner {
-  margin-top: 60px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.hero-title {
-  font-size: 3.5rem;
-  font-weight: 800;
-  color: #1c1c1e;
-  line-height: 1.1;
-}
-
-.hero-subtitle {
-  font-family: "Inter", sans-serif;
-  font-size: 1.25rem;
-  color: #555;
-  margin-top: 0.25rem;
-  margin-bottom: 1.75rem;
-}
-
-/* Video container */
+/* Video container tüm ekranı kaplayacak */
 .hero-video-container {
-  position: relative;
-  width: 80vmin;
-  height: 80vmin;
-  max-width: 90vw;
-  max-height: 90vw;
-  margin-bottom: 2rem;
-  overflow: hidden;
-  border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
-}
-
-.hero-video {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
+  overflow: hidden;
+}
+
+/* Video tam ekran cover */
+.hero-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100vw;
+  height: 100vh;
   object-fit: cover;
+  transform: translate(-50%, -50%);
   z-index: 1;
 }
 
-/* Video’nun üstünde yer alan metin ve butonlar */
-.hero-inner h1,
-.hero-inner p,
-.button-group {
+/* Üst tabakada başlık, alt metin ve butonlar */
+.hero-overlay {
   position: relative;
   z-index: 2;
+  text-align: center;
+  color: #ffffff;
+}
+
+/* Başlık ve alt başlık renkleri beyaz */
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+}
+
+.hero-subtitle {
+  font-family: "Inter", sans-serif;
+  font-size: 1.25rem;
+  margin-bottom: 1.75rem;
+  text-shadow: 0 1px 6px rgba(0,0,0,0.5);
+}
+
+/* Butonlar da üst tabakada */
+.button-group {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 1rem;
 }
 
 /* ───────────────────────────────────────────────────────────────────────── */
@@ -191,7 +159,7 @@ h1, h2, h3 {
 
 .slideshow-section {
   background-color: #ffffff;
-  padding-top: 60px;
+  padding-top: 60px; /* Sabit header boşluğu kadar */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -449,10 +417,6 @@ h1, h2, h3 {
   .hero-subtitle {
     font-size: 1rem;
   }
-  .hero-video-container {
-    width: 70vmin;
-    height: 70vmin;
-  }
   .button-group {
     flex-direction: column;
     gap: 1rem;
@@ -468,10 +432,6 @@ h1, h2, h3 {
 }
 
 @media (max-width: 480px) {
-  .hero-video-container {
-    width: 90vw;
-    height: 90vw;
-  }
   .hero-title {
     font-size: 2.25rem;
   }

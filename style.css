@@ -205,7 +205,7 @@ h1, h2, h3 {
 /*───────────────────────────────────────────────────────────────────────────*/
 
 .btn {
-  font-family: "Poppins", sans-serif;
+ font-family: "Baloo 2", cursive;
   font-size: 1rem;
   padding: 0.75rem 2rem;
   border-radius: 8px;
@@ -215,30 +215,29 @@ h1, h2, h3 {
 }
 
 .btn-primary {
-  background-color: #0071e3;
-  color: #ffffff;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  background-color: #ff3b30;   /* Parlak Kırmızı */
+  color: #ffffff;              /* Butondaki metin beyaz kalsın */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .btn-primary:hover {
-  background-color: #005fcc;
+  background-color: #e02828;   /* Hover’da biraz daha koyu */
   transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
 }
 
 .btn-secondary {
   background-color: transparent;
-  color: #0071e3;
-  border: 2px solid #0071e3;
+  color: #ff3b30;            /* Metin kırmızı */
+  border: 2px solid #ff3b30; /* Kırmızı kenarlık */
 }
 
 .btn-secondary:hover {
-  background-color: #0071e3;
+  background-color: #ff3b30;
   color: #fff;
   transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
 }
-
 /* ───────────────────────────────────────────────────────────────────────── */
 /*                     ABOUT (Oyun Hakkında) BÖLÜMÜ                          */
 /*───────────────────────────────────────────────────────────────────────────*/

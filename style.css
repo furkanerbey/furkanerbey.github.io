@@ -40,10 +40,9 @@ h1, h2, h3 {
   color: #1c1c1e;
 }
 
-/* ───────────────────────────────────────────────────────────────────────── */
-/*                                 HEADER                                     */
-/*───────────────────────────────────────────────────────────────────────────*/
-
+/* ===================== */
+/*        HEADER         */
+/* ===================== */
 .header {
   position: fixed;
   top: 0;
@@ -85,10 +84,9 @@ h1, h2, h3 {
   }
 }
 
-/* ───────────────────────────────────────────────────────────────────────── */
-/*                        HERO (Tam Ekran Video)                             */
-/*───────────────────────────────────────────────────────────────────────────*/
-
+/* ===================== */
+/*     HERO (Video)      */
+/* ===================== */
 .hero {
   position: relative;
   width: 100vw;
@@ -121,13 +119,12 @@ h1, h2, h3 {
   z-index: 1;
 }
 
-/* ───────────────────────────────────────────────────────────────────────── */
-/*            INTRO (Yazılar ve Butonlar Video Altı Bölümü)                  */
-/*───────────────────────────────────────────────────────────────────────────*/
-
+/* ===================== */
+/*  INTRO (Yazı + Buton) */
+/* ===================== */
 .intro-section {
   background-color: #ffffff;
-  padding: 80px 1rem 60px; /* Video ile arasına boşluk eklemek için 80px üst padding */
+  padding: 80px 1rem 60px; /* Video ile arasına boşluk eklemek için üst padding */
   text-align: center;
 }
 
@@ -152,15 +149,49 @@ h1, h2, h3 {
 
 .intro-buttons .button-group {
   display: flex;
-  gap: 2rem; /* Butonlar arasında daha geniş boşluk */
+  gap: 2rem;           /* Butonlar arasında geniş boşluk */
   flex-wrap: wrap;
   justify-content: center;
 }
 
-/* ───────────────────────────────────────────────────────────────────────── */
-/*                       SLIDESHOW BÖLÜMÜ STİLLERİ                           */
-/*───────────────────────────────────────────────────────────────────────────*/
+/* ===================== */
+/*   3D JELİBON BÖLÜMÜ    */
+/* ===================== */
+.three-d-section {
+  background-color: #fafafa;
+  padding: 80px 1rem;
+  text-align: center;
+}
 
+.three-d-inner {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.three-d-title {
+  font-family: "Baloo 2", cursive;
+  font-size: 2.5rem;
+  color: #ff3b30;
+  margin-bottom: 1rem;
+}
+
+model-viewer {
+  width: 100%;
+  height: 70vh; /* Yani viewport’un %70’i kadar yüksek */
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.three-d-caption {
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  color: #3c3c3c;
+  margin-top: 0.75rem;
+}
+
+/* ===================== */
+/*   SLIDESHOW BÖLÜMÜ     */
+/* ===================== */
 .slideshow-section {
   background-color: #ffffff;
   padding-top: 60px; /* Sabit header boşluğu kadar */
@@ -206,10 +237,9 @@ h1, h2, h3 {
   12.5%, 100% { opacity: 0; }
 }
 
-/* ───────────────────────────────────────────────────────────────────────── */
-/*                              BUTON STİLLERİ                               */
-/*───────────────────────────────────────────────────────────────────────────*/
-
+/* ===================== */
+/*     BUTON STİLLERİ     */
+/* ===================== */
 .btn {
   font-family: "Baloo 2", cursive;
   font-size: 1rem;
@@ -245,10 +275,9 @@ h1, h2, h3 {
   box-shadow: 0 6px 16px rgba(0,0,0,0.15);
 }
 
-/* ───────────────────────────────────────────────────────────────────────── */
-/*                     ABOUT (Oyun Hakkında) BÖLÜMÜ                          */
-/*───────────────────────────────────────────────────────────────────────────*/
-
+/* ===================== */
+/*     ABOUT BÖLÜMÜ       */
+/* ===================== */
 .about {
   background-color: #ffffff;
   display: flex;
@@ -288,10 +317,9 @@ h1, h2, h3 {
   box-shadow: 0 8px 20px rgba(0,0,0,0.04);
 }
 
-/* ───────────────────────────────────────────────────────────────────────── */
-/*                     FEATURES (Özellikler) BÖLÜMÜ                          */
-/*───────────────────────────────────────────────────────────────────────────*/
-
+/* ===================== */
+/*    FEATURES BÖLÜMÜ     */
+/* ===================== */
 .features {
   background-color: #f2f2f5;
   padding-top: 40px;
@@ -342,10 +370,9 @@ h1, h2, h3 {
   color: #3c3c3c;
 }
 
-/* ───────────────────────────────────────────────────────────────────────── */
-/*                            CTA (Call to Action)                           */
-/*───────────────────────────────────────────────────────────────────────────*/
-
+/* ===================== */
+/*   CTA (Call to Action) */
+/* ===================== */
 .cta {
   background-color: #0071e3;
   color: #ffffff;
@@ -368,10 +395,9 @@ h1, h2, h3 {
   color: #0071e3;
 }
 
-/* ───────────────────────────────────────────────────────────────────────── */
-/*                             FOOTER (İletişim)                             */
-/*───────────────────────────────────────────────────────────────────────────*/
-
+/* ===================== */
+/*     FOOTER BÖLÜMÜ      */
+/* ===================== */
 .footer {
   background-color: #ffffff;
   padding: 60px 0;
@@ -410,10 +436,9 @@ h1, h2, h3 {
   margin-top: 1.5rem;
 }
 
-/* ───────────────────────────────────────────────────────────────────────── */
-/*                             MOBİL UYUMLULUK                               */
-/*───────────────────────────────────────────────────────────────────────────*/
-
+/* ===================== */
+/*    MOBİL UYUMLULUK      */
+/* ===================== */
 @media (max-width: 768px) {
   .intro-title {
     font-size: 2.5rem;
@@ -424,6 +449,12 @@ h1, h2, h3 {
   .button-group {
     flex-direction: column;
     gap: 1.5rem;
+  }
+  .three-d-inner model-viewer {
+    height: 40vh !important;
+  }
+  .three-d-title {
+    font-size: 2rem;
   }
   .about-inner {
     flex-direction: column;

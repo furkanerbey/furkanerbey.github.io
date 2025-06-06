@@ -1,132 +1,146 @@
 <!DOCTYPE html>
 <html lang="tr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0"
-    />
-    <title>MUCK – Interaktif Bir Oyun Deneyimi</title>
-    <!-- Google Font: Poppins (Başlık ve butonlar) -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap"
-      rel="stylesheet"
-    />
-    <!-- Google Font: Inter (Metinler için) -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap"
-      rel="stylesheet"
-    />
-    <!-- Ana stil dosyası -->
-    <link rel="stylesheet" href="style.css" />
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+  <title>MUCK – İnteraktif Bir Oyun Deneyimi</title>
 
-  <body>
-    <!-- ---------- HEADER (Üst Sabit Menü) ---------- -->
-    <header class="site-header">
-      <div class="container header-content">
-        <div class="logo">MUCK</div>
-        <nav class="nav-links">
-          <a href="#hero">Ana Sayfa</a>
-          <a href="#about">Oyun Hakkında</a>
-          <a href="#features">Özellikler</a>
-          <a href="#contact">İletişim</a>
-        </nav>
-      </div>
-    </header>
+  <!-- Google Fonts: Poppins (Başlıklar & Butonlar) -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap"
+    rel="stylesheet"
+  />
+  <!-- Google Fonts: Inter (Metinler) -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap"
+    rel="stylesheet"
+  />
 
-    <!-- ---------- HERO BÖLÜMÜ (Full‐screen Slideshow) ---------- -->
-    <section id="hero" class="section hero-section">
-      <div class="hero-inner">
-        <h1 class="hero-title">muck muck</h1>
-        <p class="hero-subtitle">interaktif bir oyun deneyimi</p>
+  <!-- Ana stil dosyası -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- ─────────────────────────────────────────────── HEADER ─────────────────────────────────────────────── -->
+  <header class="header">
+    <div class="container header-inner">
+      <div class="logo">MUCK</div>
+      <nav class="nav">
+        <a href="#hero">Ana Sayfa</a>
+        <a href="#about">Hakkında</a>
+        <a href="#features">Özellikler</a>
+        <a href="#contact">İletişim</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ─────────────────────────────────────────────── HERO / SLIDESHOW ─────────────────────────────────────────────── -->
+  <section id="hero" class="section hero">
+    <div class="hero-inner">
+      <h1 class="hero-title">muck muck</h1>
+      <p class="hero-subtitle">interaktif bir oyun deneyimi</p>
 
       <div class="slideshow">
-  <img src="kalp.jpg"   alt="Kalp İkonu"   class="slide" />
-  <img src="kiraz.jpg"  alt="Kiraz İkonu"  class="slide" />
-  <img src="karpuz.jpg" alt="Karpuz İkonu" class="slide" />
-  <img src="ruj.jpg"    alt="Ruj İkonu"    class="slide" />
-  <img src="şeker.jpg"  alt="Şeker İkonu"  class="slide" />
-  <img src="mektup.png" alt="Mektup İkonu" class="slide" />
-  <img src="çilek.png"  alt="Çilek İkonu"  class="slide" />
-  <img src="dudak.png"  alt="Dudak İkonu"  class="slide" />
-</div>
-
-        <div class="button-container">
-          <a href="#" class="btn btn-primary">KAYIT OL</a>
-          <a href="#" class="btn btn-primary">İNDİR</a>
-          <a href="#" class="btn btn-secondary">KAZAN</a>
-        </div>
+        <img src="kalp.jpg"   alt="Kalp İkonu"   class="slide" />
+        <img src="kiraz.jpg"  alt="Kiraz İkonu"  class="slide" />
+        <img src="karpuz.jpg" alt="Karpuz İkonu" class="slide" />
+        <img src="ruj.jpg"    alt="Ruj İkonu"    class="slide" />
+        <img src="şeker.jpg"  alt="Şeker İkonu"  class="slide" />
+        <img src="mektup.png" alt="Mektup İkonu" class="slide" />
+        <img src="çilek.png"  alt="Çilek İkonu"  class="slide" />
+        <img src="dudak.png"  alt="Dudak İkonu"  class="slide" />
       </div>
-    </section>
 
-    <!-- ---------- ABOUT (Oyun Hakkında) ---------- -->
-    <section id="about" class="section about-section">
-      <div class="container about-content">
-        <div class="about-text">
-          <h2>Oyun Hakkında</h2>
+      <div class="button-group">
+        <a href="#" class="btn btn-primary">KAYIT OL</a>
+        <a href="#" class="btn btn-primary">İNDİR</a>
+        <a href="#" class="btn btn-secondary">KAZAN</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────────────────────────────────────────── ABOUT (Oyun Hakkında) ─────────────────────────────────────────────── -->
+  <section id="about" class="section about">
+    <div class="container about-inner">
+      <div class="about-text">
+        <h2>Oyun Hakkında</h2>
+        <p>
+          MUCK, oyunculara hem bireysel mini oyunlarla “öpücük” puanları toplama şansı sunar
+          hem de NFC tabanlı etkileşimlerle arkadaşlarınızla gerçek zamanlı kapışmalar sağlar.
+          <br /><br />
+          Hem sanal ortamdaki mini oyunlarla skor toplayın, hem de gerçek hayatta NFC’yı kullanarak
+          çevrenizdeki rakiplerle mücadele edin. Skorlar biriktiğinde, liderlik tablolarına yükselin
+          ve ödüllerinizi kapın!
+        </p>
+      </div>
+      <div class="about-image">
+        <img src="çilek.png" alt="Oyun İkonu Örneği" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────────────────────────────────────────── FEATURES (Özellikler) ─────────────────────────────────────────────── -->
+  <section id="features" class="section features">
+    <div class="container features-inner">
+      <h2>Özellikler</h2>
+      <div class="cards">
+        <div class="card">
+          <img src="kiraz.jpg" alt="Mini Oyunlar" />
+          <h3>Mini Oyunlar</h3>
           <p>
-            MUCK, oyunculara hem bireysel mini oyunlarla “öpücük” puanları toplama
-            şansı sunar hem de NFC tabanlı etkileşimlerle arkadaşlarınızla
-            gerçek zamanlı mücadeleler yapmanızı sağlar.  
-            <br /><br />
-            Kısacası, hem sanal dünyada puan toplayıp hem de gerçek hayatta
-            bir “skor” deneyimi yaşatan interaktif bir mobil oyundur.
+            Küçük 2D minigame’ler ile “öpücük” puanları topla,
+            liderlik tablosu yollarına tırman.
           </p>
         </div>
-        <div class="about-image">
-          <!-- Buraya dilediğin bir görseli koyabilirsin; örneğin oyun içi ekran görüntüsü -->
-          <img src="çilek.png" alt="Oyun Görseli" />
+        <div class="card">
+          <img src="kalp.jpg" alt="NFC Etkileşim" />
+          <h3>NFC Etkileşim</h3>
+          <p>
+            Telefonunu arkadaşının telefonuna değdir, gerçek zamanlı
+            kapışmalarda anlık puan kap.
+          </p>
+        </div>
+        <div class="card">
+          <img src="karpuz.jpg" alt="Sosyal Paylaşım" />
+          <h3>Sosyal Paylaşım</h3>
+          <p>
+            Skorlarını paylaş, haftalık turnuvalara katıl,
+            arkadaşlarını davet et, rekabeti yükselt.
+          </p>
+        </div>
+        <div class="card">
+          <img src="ruj.jpg" alt="Özel Ödüller" />
+          <h3>Özel Ödüller</h3>
+          <p>
+            Yüksek skor kazananlara özel ikonlar, sticker’lar ve
+            sanal hediyeler verilsin.
+          </p>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- ---------- FEATURES (Özellikler) ---------- -->
-    <section id="features" class="section features-section">
-      <div class="container features-content">
-        <h2>Özellikler</h2>
-        <div class="feature-cards">
-          <div class="card">
-            <img src="kiraz.jpg" alt="Küçük Oyunlar" />
-            <h3>Mini Oyunlar</h3>
-            <p>Küçük 2D oyunlarla “öpücük” puanları topla ve liderlik tablosuna çık.</p>
-          </div>
-          <div class="card">
-            <img src="kalp.jpg" alt="NFC Etkileşim" />
-            <h3>NFC Etkileşim</h3>
-            <p>Telefonunu arkadaşının telefonuna yaklaştırarak gerçek zamanlı puan kapışması yap.</p>
-          </div>
-          <div class="card">
-            <img src="karpuz.jpg" alt="Sosyal Paylaşım" />
-            <h3>Sosyal Paylaşım</h3>
-            <p>Arkadaşlarınla puanlarını kolayca paylaş, onlara meydan oku, yeni skorlar kır.</p>
-          </div>
-          <div class="card">
-            <img src="ruj.jpg" alt="Özel Hediyeler" />
-            <h3>Özel Hediyeler</h3>
-            <p>Yüksek skorlara özel sembolik hediyeler kazan ve profiline ekle.</p>
-          </div>
-        </div>
-      </div>
-    </section>
+  <!-- ─────────────────────────────────────────────── CTA (Harekete Geçir) ─────────────────────────────────────────────── -->
+  <section id="cta" class="section cta">
+    <div class="container cta-inner">
+      <h2>Hemen Katıl, PUANLARINAVIZ YÜKSELİŞE GEÇSİN!</h2>
+      <a href="#" class="btn btn-primary btn-cta">ŞİMDİ KAYDOL</a>
+    </div>
+  </section>
 
-    <!-- ---------- CALL‐TO‐ACTION BÖLÜMÜ ---------- -->
-    <section class="section cta-section">
-      <div class="container cta-content">
-        <h2>Hemen Katıl ve Skorlarını Yükselt!</h2>
-        <a href="#" class="btn btn-primary btn-cta">Şimdi Kaydol</a>
-      </div>
-    </section>
-
-    <!-- ---------- İLETİŞİM (Footer) ---------- -->
-    <footer id="contact" class="section footer-section">
-      <div class="container footer-content">
-        <h2>Bize Ulaşın</h2>
-        <p>Soruların veya işbirliği tekliflerin için aşağıdaki e-posta adresine yazabilirsiniz:</p>
-        <a href="mailto:info@muckmuck.com" class="footer-email">info@muckmuck.com</a>
-        <p class="footer-copy">© 2025 MUCK. Tüm hakları saklıdır.</p>
-      </div>
-    </footer>
-
-  </body>
+  <!-- ─────────────────────────────────────────────── CONTACT / FOOTER ─────────────────────────────────────────────── -->
+  <footer id="contact" class="section footer">
+    <div class="container footer-inner">
+      <h2>Bize Ulaşın</h2>
+      <p>
+        İşbirliği, destek veya geri bildirim için<br />
+        aşağıdaki e-posta adresine yazabilirsiniz:
+      </p>
+      <a href="mailto:info@muckmuck.com" class="footer-link">info@muckmuck.com</a>
+      <p class="footer-copy">© 2025 MUCK – Tüm Hakları Saklıdır</p>
+    </div>
+  </footer>
+</body>
 </html>

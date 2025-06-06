@@ -21,7 +21,7 @@
   object-fit: cover;
   opacity: 0;
   /* 8 saniyelik döngü, her görsel 1 saniye görünsün, ani geçiş için steps(1) */
-  animation: slideAnim 8s infinite steps(1);
+  animation: slideAnim 3s infinite steps(1);
 }
 
 /* 8 Görsele Göre Delay (0s, 1s, 2s, …, 7s) */

@@ -5,19 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>MUCK – İnteraktif Bir Oyun Deneyimi</title>
 
-  <!-- Google Fonts: Poppins (Başlıklar & Butonlar için) -->
+  <!-- Google Fonts: Poppins (Başlıklar & Butonlar) -->
   <link
     href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap"
     rel="stylesheet"
   />
-
-  <!-- Google Fonts: Inter (Metinler için) -->
+  <!-- Google Fonts: Inter (Metinler) -->
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap"
     rel="stylesheet"
   />
-
-  <!-- Google Fonts: Baloo 2 (Balonumsu Buton Fontu için) -->
+  <!-- Google Fonts: Baloo 2 (Balonumsu Buton Fontu) -->
   <link
     href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600&display=swap"
     rel="stylesheet"
@@ -27,7 +25,7 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- ─────────────────────────────────────────────── HEADER ─────────────────────────────────────────────── -->
+  <!-- HEADER -->
   <header class="header">
     <div class="container header-inner">
       <div class="logo">MUCK</div>
@@ -40,23 +38,21 @@
     </div>
   </header>
 
-  <!-- ─────────────────────────────────────────────── HERO / SLIDESHOW ─────────────────────────────────────────────── -->
+  <!-- HERO (Video Arka Plan) -->
   <section id="hero" class="section hero">
     <div class="hero-inner">
       <h1 class="hero-title">muck muck</h1>
       <p class="hero-subtitle">interaktif bir oyun deneyimi</p>
-
-   <!-- Video arka plan -->
-<div class="hero-video-container">
-  <video
-    src="hero-video.mp4"
-    class="hero-video"
-    autoplay
-    muted
-    loop
-    playsinline
-  ></video>
-</div>
+      <div class="hero-video-container">
+        <video
+          src="hero-video.mp4"
+          class="hero-video"
+          autoplay
+          muted
+          loop
+          playsinline
+        ></video>
+      </div>
       <div class="button-group">
         <a href="#" class="btn btn-primary">KAYIT OL</a>
         <a href="#" class="btn btn-primary">İNDİR</a>
@@ -65,7 +61,23 @@
     </div>
   </section>
 
-  <!-- ─────────────────────────────────────────────── ABOUT (Oyun Hakkında) ─────────────────────────────────────────────── -->
+  <!-- SLIDESHOW BÖLÜMÜ -->
+  <section id="slideshow-section" class="section slideshow-section">
+    <div class="container slideshow-inner">
+      <div class="slideshow">
+        <img src="kalp.jpg"   alt="Kalp İkonu"   class="slide" />
+        <img src="kiraz.jpg"  alt="Kiraz İkonu"  class="slide" />
+        <img src="karpuz.jpg" alt="Karpuz İkonu" class="slide" />
+        <img src="ruj.jpg"    alt="Ruj İkonu"    class="slide" />
+        <img src="şeker.jpg"  alt="Şeker İkonu"  class="slide" />
+        <img src="mektup.png" alt="Mektup İkonu" class="slide" />
+        <img src="çilek.png"  alt="Çilek İkonu"  class="slide" />
+        <img src="dudak.jpg"  alt="Dudak İkonu"  class="slide" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT (Oyun Hakkında) -->
   <section id="about" class="section about">
     <div class="container about-inner">
       <div class="about-text">
@@ -94,7 +106,7 @@
     </div>
   </section>
 
-  <!-- ─────────────────────────────────────────────── FEATURES (Özellikler) ─────────────────────────────────────────────── -->
+  <!-- FEATURES (Özellikler) -->
   <section id="features" class="section features">
     <div class="container features-inner">
       <h2>Özellikler</h2>
@@ -138,7 +150,7 @@
     </div>
   </section>
 
-  <!-- ─────────────────────────────────────────────── CTA (Harekete Geçir) ─────────────────────────────────────────────── -->
+  <!-- CTA (Call to Action) -->
   <section id="cta" class="section cta">
     <div class="container cta-inner">
       <h2>Tüm Dünyayla Rekabete Hazır mısın?</h2>
@@ -150,7 +162,7 @@
     </div>
   </section>
 
-  <!-- ─────────────────────────────────────────────── CONTACT / FOOTER ─────────────────────────────────────────────── -->
+  <!-- FOOTER (İletişim) -->
   <footer id="contact" class="section footer">
     <div class="container footer-inner">
       <h2>Bize Ulaşın</h2>

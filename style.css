@@ -75,13 +75,13 @@ header .subtitle {
 /*───────────────────────────────────────────────────────────────────────────*/
 
 /* ───────────────────────────────────────────────────────────────────────── */
-/*                           HERO SLIDESHOW BÖLÜMÜ                          */
+/*                           HERO SLIDESHOW BÖLÜMÜ (Ani Geçişli)           */
 /*───────────────────────────────────────────────────────────────────────────*/
 
 .slideshow {
   position: relative;
-  width: 600px;        /* Görselin genişliğini büyüttük */
-  height: 600px;       /* Görselin yüksekliğini büyüttük */
+  width: 300px;        /* Görsel genişliğini isteğe göre ayarlayabilirsin */
+  height: 300px;       /* Görsel yüksekliğini isteğe göre ayarlayabilirsin */
   margin: 0 auto 2rem; /* Ortala ve alt boşluk koy */
   z-index: 1;
 }
@@ -92,25 +92,22 @@ header .subtitle {
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;   /* Görsel kenarlara göre kesilmesin, ortalanarak sığsın */
-  opacity: 0;
-  animation: slideAnim 8s infinite ease-in-out;
+  object-fit: cover;           /* Görsel kenarlara uygun sığsın */
+  opacity: 0;                  /* Başlangıçta görünmez */
+  animation: slideAnim 5s infinite steps(1); /* Ani değişim + 5 saniyede döngü */
 }
 
-/* Her slide’a farklı gecikme (delay) veriyoruz */
+/* Her bir slayda 1 saniyelik aralık bırakıyoruz */
 .slide:nth-child(1) { animation-delay: 0s; }
-.slide:nth-child(2) { animation-delay: 1.6s; }
-.slide:nth-child(3) { animation-delay: 3.2s; }
-.slide:nth-child(4) { animation-delay: 4.8s; }
-.slide:nth-child(5) { animation-delay: 6.4s; }
+.slide:nth-child(2) { animation-delay: 1s; }
+.slide:nth-child(3) { animation-delay: 2s; }
+.slide:nth-child(4) { animation-delay: 3s; }
+.slide:nth-child(5) { animation-delay: 4s; }
 
-/* Slideshow için keyframes tanımı */
+/* Ani geçiş için keyframes tanımı*/
 @keyframes slideAnim {
-  0%   { opacity: 0; }
-  10%  { opacity: 1; }
-  30%  { opacity: 1; }
-  40%  { opacity: 0; }
-  100% { opacity: 0; }
+  0%, 20%   { opacity: 1; }   /* İlk %20’lik animasyonda tamamen görünür */
+  20%, 100% { opacity: 0; }   /* Geri kalanı tamamen görünmez */
 }
 
 /* Mobilde küçültmek istersen */

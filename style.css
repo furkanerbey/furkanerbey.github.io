@@ -15,7 +15,6 @@ html {
 body {
   /* Açık pembe zemin / arka plan rengini ayarlıyoruz */
   background-color: #ffdce1;
-  /* Alternatif: Eğer arkaplan görseli kullanmak istersen: */
   /* background: url('arkaplan.jpg') center/cover no-repeat; */
 
   /* Yazı ve font ayarları */
@@ -25,6 +24,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: center;        /* ← Bu satırı ekledik */
   text-align: center;
   padding: 2rem 1rem;
   position: relative;

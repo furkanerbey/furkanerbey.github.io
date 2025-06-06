@@ -2,7 +2,7 @@
 /*                        GENEL RESET VE TEMEL AYARLAR                        */
 /*───────────────────────────────────────────────────────────────────────────*/
 
-/* Eski tarayıcı sıfırlama (reset) */
+/* Tarayıcı sıfırlama */
 * {
   margin: 0;
   padding: 0;
@@ -10,18 +10,18 @@
 }
 
 html {
-  scroll-behavior: smooth; /* Bölümler arasında yumuşak kaydırma */
+  scroll-behavior: smooth;
 }
 
 body {
   font-family: "Inter", sans-serif;
-  color: #1c1c1e;      /* Çok koyu gri (Apple’ın “Graphite” tonuna yakın) */
+  color: #1c1c1e;
   background-color: #ffffff;
   line-height: 1.6;
   overflow-x: hidden;
 }
 
-/* İçeriği ortalamak için genel container */
+/* Genel container */
 .container {
   width: 100%;
   max-width: 1024px;
@@ -29,13 +29,13 @@ body {
   padding: 0 1rem;
 }
 
-/* Linkler için minimal stiller */
+/* Linkler için temel stil */
 a {
   text-decoration: none;
   color: inherit;
 }
 
-/* Headings (başlık) stilleri için Poppins kullan */
+/* Başlıklar için Poppins */
 h1, h2, h3 {
   font-family: "Poppins", sans-serif;
   color: #1c1c1e;
@@ -77,10 +77,9 @@ h1, h2, h3 {
 }
 
 .nav a:hover {
-  color: #0071e3; /* Accent mavi */
+  color: #0071e3;
 }
 
-/* Mobilde nav gizle */
 @media (max-width: 480px) {
   .nav {
     display: none;
@@ -93,11 +92,11 @@ h1, h2, h3 {
 
 .section {
   width: 100%;
-  min-height: 100vh;  /* Her bölüm tam ekran yüksekliği */
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 60px;  /* Sabit header yüksekliği kadar boşluk */
+  padding-top: 60px;
   position: relative;
 }
 
@@ -122,11 +121,11 @@ h1, h2, h3 {
 }
 
 /* ───────────────────────────────────────────────────────────────────────── */
-/*                            HERO (SLIDESHOW)                               */
+/*                         HERO (Video Arka Plan)                            */
 /*───────────────────────────────────────────────────────────────────────────*/
 
 .hero {
-  background-color: #f7f7f7; /* Çok açılmış gri ton */
+  background-color: #f7f7f7;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -134,7 +133,7 @@ h1, h2, h3 {
 }
 
 .hero-inner {
-  margin-top: 60px; /* Sabit header altı */
+  margin-top: 60px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -155,13 +154,56 @@ h1, h2, h3 {
   margin-bottom: 1.75rem;
 }
 
-.slideshow {
+/* Video container */
+.hero-video-container {
   position: relative;
-  width: 80vmin;    /* viewport’un en küçük kenarının %80’i (square) */
+  width: 80vmin;
   height: 80vmin;
-  max-width: 90vw;  /* mümkün olduğunca geniş, taşmasın */
+  max-width: 90vw;
   max-height: 90vw;
   margin-bottom: 2rem;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+}
+
+.hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+/* Video’nun üstünde yer alan metin ve butonlar */
+.hero-inner h1,
+.hero-inner p,
+.button-group {
+  position: relative;
+  z-index: 2;
+}
+
+/* ───────────────────────────────────────────────────────────────────────── */
+/*                       SLIDESHOW BÖLÜMÜ STİLLERİ                           */
+/*───────────────────────────────────────────────────────────────────────────*/
+
+.slideshow-section {
+  background-color: #ffffff;
+  padding-top: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vmin;
+}
+
+.slideshow {
+  position: relative;
+  width: 80vmin;
+  height: 80vmin;
+  max-width: 90vw;
+  max-height: 90vw;
   overflow: hidden;
   border-radius: 12px;
   box-shadow: 0 8px 20px rgba(0,0,0,0.05);
@@ -192,20 +234,12 @@ h1, h2, h3 {
   12.5%, 100% { opacity: 0; }
 }
 
-.button-group {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-top: 1rem;
-}
-
 /* ───────────────────────────────────────────────────────────────────────── */
 /*                              BUTON STİLLERİ                               */
 /*───────────────────────────────────────────────────────────────────────────*/
 
 .btn {
- font-family: "Baloo 2", cursive;
+  font-family: "Baloo 2", cursive;
   font-size: 1rem;
   padding: 0.75rem 2rem;
   border-radius: 8px;
@@ -215,29 +249,30 @@ h1, h2, h3 {
 }
 
 .btn-primary {
-  background-color: #ff3b30;   /* Parlak Kırmızı */
-  color: #ffffff;              /* Butondaki metin beyaz kalsın */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  background-color: #ff3b30;
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
 .btn-primary:hover {
-  background-color: #e02828;   /* Hover’da biraz daha koyu */
+  background-color: #e02828;
   transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
 }
 
 .btn-secondary {
   background-color: transparent;
-  color: #ff3b30;            /* Metin kırmızı */
-  border: 2px solid #ff3b30; /* Kırmızı kenarlık */
+  color: #ff3b30;
+  border: 2px solid #ff3b30;
 }
 
 .btn-secondary:hover {
   background-color: #ff3b30;
   color: #fff;
   transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
 }
+
 /* ───────────────────────────────────────────────────────────────────────── */
 /*                     ABOUT (Oyun Hakkında) BÖLÜMÜ                          */
 /*───────────────────────────────────────────────────────────────────────────*/
@@ -414,7 +449,7 @@ h1, h2, h3 {
   .hero-subtitle {
     font-size: 1rem;
   }
-  .slideshow {
+  .hero-video-container {
     width: 70vmin;
     height: 70vmin;
   }
@@ -433,7 +468,7 @@ h1, h2, h3 {
 }
 
 @media (max-width: 480px) {
-  .slideshow {
+  .hero-video-container {
     width: 90vw;
     height: 90vw;
   }
@@ -445,5 +480,12 @@ h1, h2, h3 {
   }
   .nav {
     display: none;
+  }
+  .slideshow-section {
+    min-height: 70vmin;
+  }
+  .slideshow {
+    width: 70vmin;
+    height: 70vmin;
   }
 }

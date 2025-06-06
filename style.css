@@ -94,7 +94,7 @@ header .subtitle {
   height: 100%;
   object-fit: cover;           /* Görsel kenarlara uygun sığsın */
   opacity: 0;                  /* Başlangıçta görünmez */
-  animation: slideAnim 5s infinite steps(1); /* Ani değişim + 5 saniyede döngü */
+  animation: slideAnim 3s infinite steps(1); /* Ani değişim + 5 saniyede döngü */
 }
 
 /* Her bir slayda 1 saniyelik aralık bırakıyoruz */

@@ -80,8 +80,8 @@ header .subtitle {
 
 .slideshow {
   position: relative;
-  width: 300px;        /* Görsel genişliğini isteğe göre ayarlayabilirsin */
-  height: 300px;       /* Görsel yüksekliğini isteğe göre ayarlayabilirsin */
+  width: 1000px;        /* Görsel genişliğini isteğe göre ayarlayabilirsin */
+  height: 1000px;       /* Görsel yüksekliğini isteğe göre ayarlayabilirsin */
   margin: 0 auto 2rem; /* Ortala ve alt boşluk koy */
   z-index: 1;
 }

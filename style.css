@@ -221,3 +221,6 @@ footer {
     text-align: center;
   }
 }
+body {
+  background-color: #ffe4e1; /* Yeni açık renkli arka plan */
+}

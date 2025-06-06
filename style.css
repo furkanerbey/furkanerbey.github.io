@@ -1,17 +1,183 @@
 /* ───────────────────────────────────────────────────────────────────────── */
-/*                           HERO SLIDESHOW BÖLÜMÜ                          */
-/*─────────────── (8 GÖRSEL İÇİN ANI GEÇİŞ VE BOYUT BÜYÜTME) ────────────────*/
+/*                        GENEL RESET VE TEMEL AYARLAR                        */
+/*───────────────────────────────────────────────────────────────────────────*/
 
-.slideshow {
-  position: relative;
-  /* Aşağıdaki iki satır ekranı neredeyse dolduracak şekilde ayarlandı */
-  width: 80vmin;       /* viewport’un minimum ölçütünün %80’i (square) */
-  height: 80vmin;
-  max-width: 100%;     /* geniş ekranlarda 100% aşılamasın */
-  max-height: 100%;
-  margin-bottom: 2rem;
+/* Eski tarayıcı sıfırlama (reset) */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth; /* Bölümler arasında yumuşak kaydırma */
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  color: #1c1c1e;      /* Çok koyu gri (Apple’ın “Graphite” tonuna yakın) */
+  background-color: #ffffff;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* İçeriği ortalamak için genel container */
+.container {
+  width: 100%;
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Ortaya hizalama helper */
+.centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Linkler için minimal stiller */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Headings (başlık) stilleri için Poppins kullan */
+h1, h2, h3 {
+  font-family: "Poppins", sans-serif;
+  color: #1c1c1e;
+}
+
+/* ───────────────────────────────────────────────────────────────────────── */
+/*                                 HEADER                                     */
+/*───────────────────────────────────────────────────────────────────────────*/
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: saturate(180%) blur(10px);
+  z-index: 1000;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+
+.logo {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.nav a {
+  font-size: 0.95rem;
+  margin-left: 1.75rem;
+  color: #1c1c1e;
+  transition: color 0.2s;
+}
+
+.nav a:hover {
+  color: #0071e3; /* Accent mavi */
+}
+
+/* Mobilde nav gizle veya hamburger ekle */
+@media (max-width: 480px) {
+  .nav {
+    display: none;
+  }
+}
+
+/* ───────────────────────────────────────────────────────────────────────── */
+/*                           BÖLÜM ORTAK AYARLAR                             */
+/*───────────────────────────────────────────────────────────────────────────*/
+
+.section {
+  width: 100%;
+  min-height: 100vh;  /* Her bölüm tam ekran yüksekliği */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 60px;  /* Sabit header yüksekliği kadar boşluk */
+  position: relative;
+}
+
+/* Başlık (h1) ve alt başlık (p) */
+.section h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+}
+
+.section h2 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.section p {
+  font-size: 1rem;
+  color: #3c3c3c;
+  margin-bottom: 1.5rem;
+  max-width: 600px;
+  text-align: center;
+}
+
+/* ───────────────────────────────────────────────────────────────────────── */
+/*                            HERO (SLIDESHOW)                               */
+/*───────────────────────────────────────────────────────────────────────────*/
+
+.hero {
+  background-color: #f7f7f7; /* Çok açılmış gri ton */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.hero-inner {
+  margin-top: 60px; /* Sabit header altı */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Başlık ve alt başlık stilleri */
+.hero-title {
+  font-size: 3.5rem;  /* Büyük, çarpıcı */
+  font-weight: 800;
+  color: #1c1c1e;
+  line-height: 1.1;
+}
+
+.hero-subtitle {
+  font-family: "Inter", sans-serif;
+  font-size: 1.25rem;
+  color: #555;
+  margin-top: 0.25rem;
+  margin-bottom: 1.75rem;
+}
+
+/* Slideshow konteyneri – ekranın büyük kısmını kaplayacak şekilde ayarlandı */
+.slideshow {
+  position: relative;
+  width: 80vmin;    /* viewport’un en küçük kenarının %80’i (square) */
+  height: 80vmin;
+  max-width: 90vw;  /* mümkün olduğunca geniş, ama taşmasın */
+  max-height: 90vw;
+  margin-bottom: 2rem;
+  overflow: hidden; /* Taşma varsa gizle */
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+}
+
+/* Her bir 슬라이드 (slide) */
 .slide {
   position: absolute;
   top: 0;
@@ -20,30 +186,265 @@
   height: 100%;
   object-fit: cover;
   opacity: 0;
-  /* 8 saniyelik döngü, her görsel 1 saniye görünsün, ani geçiş için steps(1) */
   animation: slideAnim 3s infinite steps(1);
+  transition: opacity 0.2s ease-out;
 }
 
-/* 8 Görsele Göre Delay (0s, 1s, 2s, …, 7s) */
+/* Görsel sayısına göre her birine 1 saniyelik gecikme */
 .slide:nth-child(1) { animation-delay: 0s; }
 .slide:nth-child(2) { animation-delay: 1s; }
 .slide:nth-child(3) { animation-delay: 2s; }
 .slide:nth-child(4) { animation-delay: 3s; }
 .slide:nth-child(5) { animation-delay: 4s; }
-.slide:nth-child(6) { animation-delay: 5s; } /* mektup */
-.slide:nth-child(7) { animation-delay: 6s; } /* çilek */
-.slide:nth-child(8) { animation-delay: 7s; } /* dudak */
+.slide:nth-child(6) { animation-delay: 5s; }
+.slide:nth-child(7) { animation-delay: 6s; }
+.slide:nth-child(8) { animation-delay: 7s; }
 
+/* Ani (fade’siz) geçiş için keyframes */
 @keyframes slideAnim {
-  0%,  12.5% { opacity: 1; }   /* İlk %12.5’te (1s) aktif */
-  12.5%, 100% { opacity: 0; }  /* Geri kalanı görünmez */
+  0%,  12.5% { opacity: 1; }   /* Her görsel kendi %12.5 diliminde kesinlikle görünür */
+  12.5%, 100% { opacity: 0; }  /* Geri kalan sürede tamamen görünmez */
 }
 
-/* Mobilde biraz daha ufalatalım ama hala büyük olsun */
+/* Buton grubu – minimal, dikeyde ortalanmış */
+.button-group {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+/* ───────────────────────────────────────────────────────────────────────── */
+/*                              BUTON STİLLERİ                               */
+/*───────────────────────────────────────────────────────────────────────────*/
+
+.btn {
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  padding: 0.75rem 2rem;
+  border-radius: 8px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background-color: #0071e3;
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.btn-primary:hover {
+  background-color: #005fcc;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: #0071e3;
+  border: 2px solid #0071e3;
+}
+
+.btn-secondary:hover {
+  background-color: #0071e3;
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+
+/* ───────────────────────────────────────────────────────────────────────── */
+/*                     ABOUT (Oyun Hakkında) BÖLÜMÜ                          */
+/*───────────────────────────────────────────────────────────────────────────*/
+
+.about {
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.about-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 2rem;
+  width: 100%;
+}
+
+.about-text {
+  flex: 1 1 350px;
+  text-align: left;
+}
+
+.about-text h2 {
+  text-align: center;
+}
+
+.about-image {
+  flex: 1 1 350px;
+  display: flex;
+  justify-content: center;
+}
+
+.about-image img {
+  width: 100%;
+  max-width: 350px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.04);
+}
+
+/* ───────────────────────────────────────────────────────────────────────── */
+/*                     FEATURES (Özellikler) BÖLÜMÜ                          */
+/*───────────────────────────────────────────────────────────────────────────*/
+
+.features {
+  background-color: #f2f2f5;
+  padding-top: 40px;
+}
+
+.features-inner {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.card {
+  background-color: #ffffff;
+  width: 220px;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+}
+
+.card img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  margin-bottom: 1rem;
+}
+
+.card h3 {
+  font-size: 1.125rem;
+  margin-bottom: 0.5rem;
+}
+
+.card p {
+  font-size: 0.95rem;
+  color: #3c3c3c;
+}
+
+/* ───────────────────────────────────────────────────────────────────────── */
+/*                            CTA (Call to Action)                           */
+/*───────────────────────────────────────────────────────────────────────────*/
+
+.cta {
+  background-color: #0071e3;
+  color: #ffffff;
+  padding: 80px 0;
+}
+
+.cta-inner h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.btn-cta {
+  background-color: #ffffff;
+  color: #0071e3;
+}
+
+.btn-cta:hover {
+  background-color: #eaeaea;
+  color: #0071e3;
+}
+
+/* ───────────────────────────────────────────────────────────────────────── */
+/*                             FOOTER (İletişim)                             */
+/*───────────────────────────────────────────────────────────────────────────*/
+
+.footer {
+  background-color: #ffffff;
+  padding: 60px 0;
+}
+
+.footer-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.footer-inner h2 {
+  font-size: 1.75rem;
+}
+
+.footer-inner p {
+  font-size: 1rem;
+  color: #3c3c3c;
+}
+
+.footer-link {
+  font-size: 1rem;
+  color: #0071e3;
+  transition: color 0.2s;
+}
+
+.footer-link:hover {
+  text-decoration: underline;
+  color: #005fcc;
+}
+
+.footer-copy {
+  font-size: 0.85rem;
+  color: #3c3c3c;
+  margin-top: 1.5rem;
+}
+
+/* ───────────────────────────────────────────────────────────────────────── */
+/*                             MOBİL UYUMLULUK                               */
+/*───────────────────────────────────────────────────────────────────────────*/
+
 @media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.75rem;
+  }
+  .hero-subtitle {
+    font-size: 1rem;
+  }
   .slideshow {
     width: 70vmin;
     height: 70vmin;
+  }
+  .button-group {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .about-inner {
+    flex-direction: column;
+    align-items: center;
+  }
+  .cards {
+    flex-direction: column;
+    align-items: center;
   }
 }
 
@@ -51,5 +452,14 @@
   .slideshow {
     width: 90vw;
     height: 90vw;
+  }
+  .hero-title {
+    font-size: 2.25rem;
+  }
+  .features-inner h2, .about-text h2, .footer-inner h2 {
+    font-size: 2rem;
+  }
+  .nav {
+    display: none;
   }
 }
